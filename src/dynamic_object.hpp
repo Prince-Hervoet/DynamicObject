@@ -119,6 +119,7 @@ namespace etools
         void Set(std::string &key, long value);
         void Set(std::string &key, long long value);
         void Set(std::string &key, void *value);
+        void Set(std::string &key, const char *value);
 
         void Add(bool value);
         void Add(char value);
@@ -129,6 +130,7 @@ namespace etools
         void Add(unsigned int value);
         void Add(long value);
         void Add(long long value);
+        void Add(const char *value);
         void Add(void *value);
         DynamicNode *Get(std::string &key);
         DynamicNode *Get(int index);

@@ -121,6 +121,21 @@ void DynamicObject::Set(std::string &key, bool value)
     insertNode(node);
 }
 
+void DynamicObject::Set(std::string &key, const char *value)
+{
+    DynamicNode *node = createNode(key);
+    node->isBaseType = false;
+    node->content.ptrValue = (void *)value;
+    insertNode(node);
+}
+
+void DynamicObject::Add(const char *value)
+{
+    DynamicNode *node = createNode();
+    node->content.ptrValue = (void *)value;
+    insertNode(node);
+}
+
 void DynamicObject::Add(short value)
 {
     DynamicNode *node = createNode();
