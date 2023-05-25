@@ -98,6 +98,7 @@ namespace etools
         DynamicNode *tail = nullptr;
         std::map<std::string, DynamicNode *> *keyToMap = nullptr;
         DynamicNode *createNode(std::string &key);
+        DynamicNode *createNode();
         void insertNode(DynamicNode *node);
         int size = 0;
         int flag = -1;
@@ -118,6 +119,17 @@ namespace etools
         void Set(std::string &key, long value);
         void Set(std::string &key, long long value);
         void Set(std::string &key, void *value);
+
+        void Add(bool value);
+        void Add(char value);
+        void Add(short value);
+        void Add(int value);
+        void Add(float value);
+        void Add(double value);
+        void Add(unsigned int value);
+        void Add(long value);
+        void Add(long long value);
+        void Add(void *value);
         DynamicNode *Get(std::string &key);
         DynamicNode *Get(int index);
         void Remove(std::string &key);
@@ -134,4 +146,4 @@ namespace etools
     };
 
     DynamicObject *getDynamicObject(bool needMap);
-} // namespace etools
+};

@@ -121,6 +121,76 @@ void DynamicObject::Set(std::string &key, bool value)
     insertNode(node);
 }
 
+void DynamicObject::Add(short value)
+{
+    DynamicNode *node = createNode();
+    node->content.value_longlong = value;
+    insertNode(node);
+}
+
+void DynamicObject::Add(int value)
+{
+    DynamicNode *node = createNode();
+    node->content.value_longlong = value;
+    insertNode(node);
+}
+
+void DynamicObject::Add(unsigned int value)
+{
+    DynamicNode *node = createNode();
+    node->content.value_longlong = value;
+    insertNode(node);
+}
+
+void DynamicObject::Add(long value)
+{
+    DynamicNode *node = createNode();
+    node->content.value_longlong = value;
+    insertNode(node);
+}
+
+void DynamicObject::Add(long long value)
+{
+    DynamicNode *node = createNode();
+    node->content.value_longlong = value;
+    insertNode(node);
+}
+
+void DynamicObject::Add(float value)
+{
+    DynamicNode *node = createNode();
+    node->content.value_float = value;
+    insertNode(node);
+}
+
+void DynamicObject::Add(double value)
+{
+    DynamicNode *node = createNode();
+    node->content.value_double = value;
+    insertNode(node);
+}
+
+void DynamicObject::Add(bool value)
+{
+    DynamicNode *node = createNode();
+    node->content.value_bool = value;
+    insertNode(node);
+}
+
+void DynamicObject::Add(void *value)
+{
+    DynamicNode *node = createNode();
+    node->content.ptrValue = value;
+    insertNode(node);
+}
+
+void DynamicObject::Add(char value)
+{
+    DynamicNode *node = createNode();
+    node->content.value_char = value;
+    insertNode(node);
+}
+
 DynamicNode *DynamicObject::Get(std::string &key)
 {
     if (!keyToMap)
@@ -227,9 +297,9 @@ void DynamicObject::Remove(std::string &key)
         p1->next = p2;
         p2->prev = p1;
     }
+    keyToMap->erase(key);
     delete target;
     size -= 1;
-    keyToMap->erase(key);
 }
 
 void DynamicObject::Remove(int index)
@@ -242,7 +312,6 @@ void DynamicObject::Remove(int index)
     if (target == head)
     {
         DynamicNode *temp = head->next;
-        delete head;
         head = temp;
         if (temp)
         {
@@ -256,7 +325,6 @@ void DynamicObject::Remove(int index)
     else if (target == tail)
     {
         DynamicNode *temp = tail->prev;
-        delete tail;
         tail = temp;
         if (temp)
         {
@@ -274,8 +342,9 @@ void DynamicObject::Remove(int index)
         p1->next = p2;
         p2->prev = p1;
     }
-    delete target;
     keyToMap->erase(target->key);
+    delete target;
+    size -= 1;
 }
 
 DynamicNode *DynamicObject::createNode(std::string &key)
@@ -287,6 +356,12 @@ DynamicNode *DynamicObject::createNode(std::string &key)
     }
     DynamicNode *node = new DynamicNode();
     node->key = key;
+    return node;
+}
+
+DynamicNode *DynamicObject::createNode()
+{
+    DynamicNode *node = new DynamicNode();
     return node;
 }
 
