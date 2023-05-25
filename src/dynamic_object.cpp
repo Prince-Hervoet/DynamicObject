@@ -26,7 +26,7 @@ void DynamicObject::Clear()
         return;
     }
     DynamicNode *run = head;
-    while (run != nullptr)
+    while (run)
     {
         DynamicNode *temp = run->next;
         delete run;
