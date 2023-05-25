@@ -1,9 +1,9 @@
 #include "dynamic_object.hpp"
 using namespace etools;
 
-DynamicObject *makeDynamicObject(bool needMap)
+DynamicObject &getDynamicObject(bool needMap)
 {
-    return new DynamicObject(needMap);
+    return *(new DynamicObject());
 }
 
 DynamicObject::DynamicObject(bool needMap)
@@ -431,4 +431,9 @@ void DynamicObject::ResetNext()
 {
     flag = -1;
     flagNode = nullptr;
+}
+
+DynamicNode *DynamicObject::operator[](int index)
+{
+    return Get(index);
 }

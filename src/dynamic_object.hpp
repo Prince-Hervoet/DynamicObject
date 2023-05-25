@@ -139,7 +139,7 @@ namespace etools
         DynamicNode *Next();
         bool HasNext();
         void ResetNext();
-        void *operator[](int index);
+        DynamicNode *operator[](int index);
 
         int Size()
         {
@@ -147,5 +147,5 @@ namespace etools
         }
     };
 
-    DynamicObject *getDynamicObject(bool needMap);
+    DynamicObject &getDynamicObject(bool needMap);
 };

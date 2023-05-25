@@ -3,7 +3,7 @@
 
 int main()
 {
-    etools::DynamicObject *dy = new etools::DynamicObject();
-    dy->Add("asdfasdf");
-    std::cout << dy->Get(0)->GetPtrValue() << std::endl;
+    etools::DynamicObject dy = etools::getDynamicObject(true);
+    dy.Add("asdfasdf");
+    std::cout << dy[0]->GetPtrValue() << std::endl;
 }
