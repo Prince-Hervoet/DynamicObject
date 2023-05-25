@@ -4,6 +4,8 @@
 int main()
 {
     etools::DynamicObject dy = etools::getDynamicObject(true);
+    std::string s = "1234";
+    dy.Set("asdf", "123");
     dy.Add("asdfasdf");
-    std::cout << dy[0]->GetPtrValue() << std::endl;
+    std::cout << (const char *)dy[0]->GetPtrValue() << std::endl;
 }

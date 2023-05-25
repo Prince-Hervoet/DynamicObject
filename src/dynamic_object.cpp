@@ -129,6 +129,108 @@ void DynamicObject::Set(std::string &key, const char *value)
     insertNode(node);
 }
 
+// ----------------
+void DynamicObject::Set(const char *key, short value)
+{
+    std::string s = key;
+    DynamicNode *node = createNode(s);
+    node->isBaseType = true;
+    node->content.value_longlong = value;
+    insertNode(node);
+}
+
+void DynamicObject::Set(const char *key, char value)
+{
+    std::string s = key;
+    DynamicNode *node = createNode(s);
+    node->isBaseType = true;
+    node->content.value_longlong = value;
+    insertNode(node);
+}
+
+void DynamicObject::Set(const char *key, unsigned int value)
+{
+    std::string s = key;
+    DynamicNode *node = createNode(s);
+    node->isBaseType = true;
+    node->content.value_longlong = value;
+    insertNode(node);
+}
+
+void DynamicObject::Set(const char *key, int value)
+{
+    std::string s = key;
+    DynamicNode *node = createNode(s);
+    node->isBaseType = true;
+    node->content.value_longlong = value;
+    insertNode(node);
+}
+
+void DynamicObject::Set(const char *key, float value)
+{
+    std::string s = key;
+    DynamicNode *node = createNode(s);
+    node->isBaseType = true;
+    node->content.value_float = value;
+    insertNode(node);
+}
+
+void DynamicObject::Set(const char *key, double value)
+{
+    std::string s = key;
+    DynamicNode *node = createNode(s);
+    node->isBaseType = true;
+    node->content.value_double = value;
+    insertNode(node);
+}
+
+void DynamicObject::Set(const char *key, long value)
+{
+    std::string s = key;
+    DynamicNode *node = createNode(s);
+    node->isBaseType = true;
+    node->content.value_longlong = value;
+    insertNode(node);
+}
+
+void DynamicObject::Set(const char *key, long long value)
+{
+    std::string s = key;
+    DynamicNode *node = createNode(s);
+    node->isBaseType = true;
+    node->content.value_longlong = value;
+    insertNode(node);
+}
+
+void DynamicObject::Set(const char *key, void *value)
+{
+    std::string s = key;
+    DynamicNode *node = createNode(s);
+    node->isBaseType = false;
+    node->content.ptrValue = value;
+    insertNode(node);
+}
+
+void DynamicObject::Set(const char *key, bool value)
+{
+    std::string s = key;
+    DynamicNode *node = createNode(s);
+    node->isBaseType = false;
+    node->content.value_bool = value;
+    insertNode(node);
+}
+
+void DynamicObject::Set(const char *key, const char *value)
+{
+    std::string s = key;
+    DynamicNode *node = createNode(s);
+    node->isBaseType = false;
+    node->content.ptrValue = (void *)value;
+    insertNode(node);
+}
+
+// ----------------
+
 void DynamicObject::Add(const char *value)
 {
     DynamicNode *node = createNode();

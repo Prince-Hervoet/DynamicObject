@@ -109,6 +109,19 @@ namespace etools
         DynamicObject(bool needMap);
 
         void Clear();
+
+        void Set(const char *key, bool value);
+        void Set(const char *key, char value);
+        void Set(const char *key, short value);
+        void Set(const char *key, int value);
+        void Set(const char *key, float value);
+        void Set(const char *key, double value);
+        void Set(const char *key, unsigned int value);
+        void Set(const char *key, long value);
+        void Set(const char *key, long long value);
+        void Set(const char *key, void *value);
+        void Set(const char *key, const char *value);
+
         void Set(std::string &key, bool value);
         void Set(std::string &key, char value);
         void Set(std::string &key, short value);
