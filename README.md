@@ -1,1 +1,1 @@
-This is a dynamic object in C++.
+# This is a dynamic object in C++.
