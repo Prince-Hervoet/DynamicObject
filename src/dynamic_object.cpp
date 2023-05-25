@@ -1,7 +1,7 @@
 #include "dynamic_object.hpp"
 using namespace etools;
 
-DynamicObject &getDynamicObject(bool needMap)
+DynamicObject &etools::getDynamicObject(bool needMap)
 {
     return *(new DynamicObject());
 }
